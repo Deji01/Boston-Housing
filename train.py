@@ -30,7 +30,7 @@ df = read_csv("housing.csv",delim_whitespace=True, names=names)
 prices = df['MEDV']
 df = df.drop(['CRIM','ZN','INDUS','NOX','AGE','DIS','RAD'], axis=1)
 features = df.drop('MEDV', axis=1)
-df.describe().T[['max', 'min']].to_json('shema_in.json')
+
 ## Modelling
 
 ### Split Data
@@ -47,11 +47,6 @@ X_train, X_validation, Y_train, Y_validation = train_test_split(
     test_size=validation_size, 
     random_state=seed
 )
-
-
-for sample in list(X_validation)[0:2]:
-    print(f"X_validation {sample}")
-
 
 ### Tune Scaled GBM
 
