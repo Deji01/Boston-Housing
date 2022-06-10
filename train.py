@@ -30,7 +30,7 @@ df = read_csv("housing.csv",delim_whitespace=True, names=names)
 prices = df['MEDV']
 df = df.drop(['CRIM','ZN','INDUS','NOX','AGE','DIS','RAD'], axis=1)
 features = df.drop('MEDV', axis=1)
-
+df.describe().T[['max', 'min']].to_json('shema_in.json')
 ## Modelling
 
 ### Split Data
