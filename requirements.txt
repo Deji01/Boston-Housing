@@ -4,3 +4,4 @@ pandas
 Flask
 scikit-learn
 pylint
+pytest
